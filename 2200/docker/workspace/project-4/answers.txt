@@ -1,0 +1,68 @@
+CS 2200 Spring 2024
+Project 4
+
+Name:Zhixiang Yan
+GT Username:zyan319
+
+Problem 6.1 (FCFS Scheduler)
+----------
+cpu 1:
+Total Context Switches: 102
+Total execution time: 70.3 s
+Total time spent in READY state: 169.2 s
+cpu 2:
+Total Context Switches: 132
+Total execution time: 43.2 s
+Total time spent in READY state: 30.2 s
+cpu 4:
+Total Context Switches: 177
+Total execution time: 37.0 s
+Total time spent in READY state: 0.3 s
+
+1 cpu has 70.3s; 2 cpu has 43.2s; 4 cpu has 37.0. According to this data,
+there is no linear relationahisp between the number of cpus and total execution time,
+since add cpu from 1 to 2 has reduce the most execution time and while 2 cpu to 4 cpu
+dont not save too much time. that's because more overhead in managing multiple processes
+with more CPU and Context Switches can increase iwth more CPU as well.
+
+/* Fix me */
+
+Problem 6.2 (Round-Robin)
+----------
+800ms:
+Total Context Switches: 131
+Total execution time: 67.9 s
+Total time spent in READY state: 317.1 s
+
+600ms:
+Total Context Switches: 156
+Total execution time: 67.9 s
+Total time spent in READY state: 302.3 s
+400ms:
+Total Context Switches: 202
+Total execution time: 67.9 s
+Total time spent in READY state: 291.7 s
+200ms:
+Total Context Switches: 363
+Total execution time: 68.0 s
+Total time spent in READY state: 279.2 s
+Longer timeslice result in shorter time spend in the READY state. it might not be
+the best choice becuase shorter timeslice will result in cpu doing a lot of context
+switch between each processes
+
+Problem 6.3 (Preemptive Priority)
+----------
+we can use priority aging to avoid starvation for low-priority processes by increase 
+the priority of the waiting processes gradually over time which allow low-priority processes
+has chance to excute in the future.
+
+/* Fix me */
+
+Problem 6.4 (The Priority Inversion Problem)
+---------
+we can use Priority inheritance, since monitor has low-priority and blocking the P1 with
+high-priority we can modefy the scheduler to check if it is blocking high-priority 
+process, if yes, we can incrase the priority of the lower-priority process and after the
+P1 has display the window on the monitor we can then change the window's priority
+to its original priority.
+/* Fix me */

@@ -1,0 +1,13 @@
+CS 2200 Spring 2024
+Homework 2
+
+Name:Zhixiang Yan
+GT Username:zyan319@gatech.edu
+
+Question 1
+----------
+
+In the jalr instrution it incremented pc and store into $ra,
+we can do this by lea $ra, 0 which also store incremented pc into
+$ra. then we can use beq $zero, $zero, target  this will unconditionally jump
+to the target address.
